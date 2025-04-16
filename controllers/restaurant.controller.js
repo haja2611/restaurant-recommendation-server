@@ -1,5 +1,4 @@
 // restaurant.controller.js
-
 const RestaurantModel = require("../models/Restaurant.model");
 
 const getRestaurantsByFilters = async (req, res) => {
@@ -34,4 +33,25 @@ const getRestaurantsByFilters = async (req, res) => {
   }
 };
 
-module.exports = { getRestaurantsByFilters };
+// POST API - Add restaurant with image
+const postRestaurants = async (req, res) => {
+  try {
+    const newRestaurant = new RestaurantModel({
+      name: req.body.name,
+      address: req.body.address,
+      contact: req.body.contact,
+      location: req.body.location,
+      rating: req.body.rating,
+      offers: req.body.offers,
+      cuisines: req.body.cuisines.split(","), // assuming comma-separated input
+      image: req.file ? `/uploads/${req.file.filename}` : "",
+    });
+
+    await newRestaurant.save();
+    res.status(201).json(newRestaurant);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = { getRestaurantsByFilters, postRestaurants };
