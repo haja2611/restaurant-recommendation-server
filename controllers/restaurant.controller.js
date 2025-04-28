@@ -1,6 +1,16 @@
 // restaurant.controller.js
 const RestaurantModel = require("../models/Restaurant.model");
 
+// GET API - Get all restaurants
+const getAllRestaurants = async (req, res) => {
+  try {
+    const restaurants = await RestaurantModel.find();
+    res.status(200).json({ success: true, data: restaurants });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 const getRestaurantsByFilters = async (req, res) => {
   console.log("request body is", req.body);
   try {
@@ -36,22 +46,170 @@ const getRestaurantsByFilters = async (req, res) => {
 // POST API - Add restaurant with image
 const postRestaurants = async (req, res) => {
   try {
+    const {
+      name,
+      address,
+      contact,
+      location,
+      rating,
+      offers,
+      cuisines,
+      latitude,
+      longitude,
+      nutrients,
+      dining,
+      weatherPreference,
+      timing,
+      transport,
+    } = req.body;
+    const userId = req.user.id;
     const newRestaurant = new RestaurantModel({
-      name: req.body.name,
-      address: req.body.address,
-      contact: req.body.contact,
-      location: req.body.location,
-      rating: req.body.rating,
-      offers: req.body.offers,
-      cuisines: req.body.cuisines.split(","), // assuming comma-separated input
+      name,
+      address,
+      contact,
+      location,
+      offers,
+      cuisines: cuisines?.split(","),
+      latitude,
+      longitude,
+      nutrients: nutrients?.split(","),
+      dining: dining?.split(","),
+      weatherPreference: weatherPreference?.split(","),
+      timing: timing?.split(","),
+      transport: transport?.split(","),
       image: req.file ? `/uploads/${req.file.filename}` : "",
+      createdBy: userId,
     });
 
     await newRestaurant.save();
-    res.status(201).json(newRestaurant);
+    res.status(201).json({ success: true, data: newRestaurant });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    if (error.code === 11000) {
+      return res.status(400).json({
+        success: false,
+        msg: "Restaurant already exists at this lat/long.",
+      });
+    }
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+const updateAverageRating = async (restaurantId) => {
+  const restaurant = await RestaurantModel.findById(restaurantId);
+  const total = restaurant.reviews.reduce((sum, r) => sum + r.rating, 0);
+  const avg =
+    restaurant.reviews.length > 0 ? total / restaurant.reviews.length : 0;
+
+  restaurant.averageRating = avg.toFixed(1);
+  await restaurant.save();
+};
+
+const addReview = async (req, res) => {
+  try {
+    const { restaurantId, rating, comment } = req.body;
+
+    const restaurant = await RestaurantModel.findById(restaurantId);
+    restaurant.reviews.push({
+      user: req.user.id,
+      rating,
+      comment,
+    });
+
+    await restaurant.save();
+    await updateAverageRating(restaurantId);
+
+    res.status(201).json({ success: true, message: "Review added" });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+const editRestaurant = async (req, res) => {
+  try {
+    const { id } = req.params; // Restaurant ID
+    const userId = req.user.id; // From your auth middleware
+
+    const restaurant = await RestaurantModel.findById(id);
+
+    if (!restaurant) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Restaurant not found" });
+    }
+
+    // Check if the logged-in user is the creator
+    if (restaurant.createdBy.toString() !== userId) {
+      return res
+        .status(403)
+        .json({
+          success: false,
+          message: "Unauthorized to edit this restaurant",
+        });
+    }
+
+    // Update allowed fields
+    const updatedData = {
+      ...req.body,
+      cuisines: req.body.cuisines?.split(","),
+      nutrients: req.body.nutrients?.split(","),
+      dining: req.body.dining?.split(","),
+      weatherPreference: req.body.weatherPreference?.split(","),
+      timing: req.body.timing?.split(","),
+      transport: req.body.transport?.split(","),
+    };
+
+    // If a new image is uploaded
+    if (req.file) {
+      updatedData.image = `/uploads/${req.file.filename}`;
+    }
+
+    const updatedRestaurant = await RestaurantModel.findByIdAndUpdate(
+      id,
+      updatedData,
+      { new: true }
+    );
+
+    res.status(200).json({ success: true, data: updatedRestaurant });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+const deleteRestaurant = async (req, res) => {
+  try {
+    const { id } = req.params; // Restaurant ID
+    const userId = req.user.id; // From your auth middleware
+
+    const restaurant = await RestaurantModel.findById(id);
+
+    if (!restaurant) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Restaurant not found" });
+    }
+
+    // Check if the logged-in user is the creator
+    if (restaurant.createdBy.toString() !== userId) {
+      return res
+        .status(403)
+        .json({
+          success: false,
+          message: "Unauthorized to delete this restaurant",
+        });
+    }
+
+    await RestaurantModel.findByIdAndDelete(id);
+
+    res
+      .status(200)
+      .json({ success: true, message: "Restaurant deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
-module.exports = { getRestaurantsByFilters, postRestaurants };
+module.exports = {
+  getRestaurantsByFilters,
+  postRestaurants,
+  addReview,
+  getAllRestaurants,
+  editRestaurant,
+  deleteRestaurant
+};

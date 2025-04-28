@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "680d22bbeea6aa87fbb8d8dc",
+    "name": "dhoni",
+    "address": "cbndfhdfdhdrh",
+    "contact": "45446486876",
+    "location": "Chennai",
+    "averageRating": 0,
+    "offers": false,
+    "cuisines": [
+      ""
+    ],
+    "image": "/uploads/1745691323469-ChatGPT Image Apr 16, 2025, 10_04_46 AM.png",
+    "latitude": 13.0318336,
+    "longitude": 80.2127872,
+    "nutrients": [
+      ""
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      ""
+    ],
+    "timing": [
+      ""
+    ],
+    "transport": [
+      ""
+    ],
+    "createdBy": "680d2292eea6aa87fbb8d8d5",
+    "reviews": [],
+    "createdAt": "2025-04-26T18:15:23.517Z",
+    "updatedAt": "2025-04-26T18:15:23.517Z",
+    "__v": 0
+  },
+  {
+    "_id": "680e22acd9730411390359a1",
+    "name": "zam zam",
+    "address": "5th ave road",
+    "contact": "1254896",
+    "location": "Banglore",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian"
+    ],
+    "image": "/uploads/1745756844676-zam zam.jpg",
+    "latitude": 13.0318336,
+    "longitude": 80.232448,
+    "nutrients": [
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      ""
+    ],
+    "timing": [
+      "Dinner"
+    ],
+    "transport": [
+      ""
+    ],
+    "createdBy": "680d2292eea6aa87fbb8d8d5",
+    "reviews": [],
+    "createdAt": "2025-04-27T12:27:24.732Z",
+    "updatedAt": "2025-04-27T12:27:24.732Z",
+    "__v": 0
+  }
+]
