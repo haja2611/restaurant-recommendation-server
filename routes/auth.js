@@ -18,16 +18,17 @@ router.post("/register", async (req, res) => {
     user = new User({ name, email, password: hashedPassword });
     await user.save();
 
-    const payload = { user: { id: user.id } };
-    jwt.sign(
-      payload,
-      process.env.JWT_SECRET,
-      { expiresIn: "7d" },
-      (err, token) => {
-        if (err) throw err;
-        res.json({ token });
-      }
-    );
+    // const payload = { user: { id: user.id } };
+    // jwt.sign(
+    //   payload,
+    //   process.env.JWT_SECRET,
+    //   { expiresIn: "7d" },
+    //   (err, token) => {
+    //     if (err) throw err;
+    //     res.json({ token });
+    //   }
+    // );
+    res.json({ message: "Register successful" });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");
@@ -48,10 +49,17 @@ router.post("/login", async (req, res) => {
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
-      { expiresIn: "7d" },
+      { expiresIn: "1h" },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.cookie("token", token, {
+          httpOnly: true,
+          secure: false, // only over HTTPS
+          sameSite: "Lax", // or 'Lax'
+          maxAge: 3600000, // 1 hour
+        });
+        res.json({ message: "Login successful" });
+        console.log("Token: ", token);
       }
     );
   } catch (err) {

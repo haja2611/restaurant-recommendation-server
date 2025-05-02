@@ -1,6 +1,9 @@
 // restaurant.controller.js
 const RestaurantModel = require("../models/Restaurant.model");
-
+const exportDataToJson = require("../utils/exportToJson");
+const User = require("../models/User"); // or wherever your user model file is
+const fs = require("fs");
+const path = require("path");
 // GET API - Get all restaurants
 const getAllRestaurants = async (req, res) => {
   try {
@@ -32,7 +35,10 @@ const getRestaurantsByFilters = async (req, res) => {
       query.cuisines = { $in: cuisines };
     }
 
-    const restaurants = await RestaurantModel.find(query);
+    const restaurants = await RestaurantModel.find(query).populate(
+      "reviews.user",
+      "name avatar"
+    );
     if (restaurants.length > 0) {
       res.json({ success: true, data: restaurants });
     } else {
@@ -82,6 +88,7 @@ const postRestaurants = async (req, res) => {
     });
 
     await newRestaurant.save();
+    exportDataToJson();
     res.status(201).json({ success: true, data: newRestaurant });
   } catch (error) {
     if (error.code === 11000) {
@@ -106,16 +113,29 @@ const updateAverageRating = async (restaurantId) => {
 const addReview = async (req, res) => {
   try {
     const { restaurantId, rating, comment } = req.body;
-
+    const userId = req.user.id;
     const restaurant = await RestaurantModel.findById(restaurantId);
-    restaurant.reviews.push({
-      user: req.user.id,
-      rating,
-      comment,
-    });
+    if (!restaurant) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Restaurant not found" });
+    }
+    // Check if the user has already reviewed
+    const existingReviewIndex = restaurant.reviews.findIndex(
+      (r) => r.user.toString() === userId.toString()
+    );
+    if (existingReviewIndex !== -1) {
+      // Update existing review
+      restaurant.reviews[existingReviewIndex].rating = rating;
+      restaurant.reviews[existingReviewIndex].comment = comment;
+    } else {
+      // Add new review
+      restaurant.reviews.push({ user: userId, rating, comment });
+    }
 
     await restaurant.save();
     await updateAverageRating(restaurantId);
+    await exportDataToJson();
 
     res.status(201).json({ success: true, message: "Review added" });
   } catch (error) {
@@ -137,12 +157,10 @@ const editRestaurant = async (req, res) => {
 
     // Check if the logged-in user is the creator
     if (restaurant.createdBy.toString() !== userId) {
-      return res
-        .status(403)
-        .json({
-          success: false,
-          message: "Unauthorized to edit this restaurant",
-        });
+      return res.status(403).json({
+        success: false,
+        message: "Unauthorized to edit this restaurant",
+      });
     }
 
     // Update allowed fields
@@ -166,7 +184,7 @@ const editRestaurant = async (req, res) => {
       updatedData,
       { new: true }
     );
-
+    await exportDataToJson();
     res.status(200).json({ success: true, data: updatedRestaurant });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
@@ -187,16 +205,22 @@ const deleteRestaurant = async (req, res) => {
 
     // Check if the logged-in user is the creator
     if (restaurant.createdBy.toString() !== userId) {
-      return res
-        .status(403)
-        .json({
-          success: false,
-          message: "Unauthorized to delete this restaurant",
-        });
+      return res.status(403).json({
+        success: false,
+        message: "Unauthorized to delete this restaurant",
+      });
     }
-
+    // Delete image from folder
+    if (restaurant.image) {
+      const imagePath = path.join(__dirname, "..", restaurant.image);
+      fs.unlink(imagePath, (err) => {
+        if (err) {
+          console.error("Error deleting image file:", err.message);
+        }
+      });
+    }
     await RestaurantModel.findByIdAndDelete(id);
-
+    await exportDataToJson();
     res
       .status(200)
       .json({ success: true, message: "Restaurant deleted successfully" });
@@ -211,5 +235,5 @@ module.exports = {
   addReview,
   getAllRestaurants,
   editRestaurant,
-  deleteRestaurant
+  deleteRestaurant,
 };

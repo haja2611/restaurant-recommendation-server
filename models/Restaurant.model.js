@@ -32,7 +32,7 @@ const restaurantSchema = new mongoose.Schema(
 
     createdBy: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "user",
+      ref: "User",
       required: true,
     },
 
@@ -40,7 +40,7 @@ const restaurantSchema = new mongoose.Schema(
       {
         user: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "user",
+          ref: "User",
         },
         rating: Number,
         comment: String,

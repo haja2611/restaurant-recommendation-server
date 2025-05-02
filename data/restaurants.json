@@ -5,7 +5,7 @@
     "address": "cbndfhdfdhdrh",
     "contact": "45446486876",
     "location": "Chennai",
-    "averageRating": 0,
+    "averageRating": 3.5,
     "offers": false,
     "cuisines": [
       ""
@@ -29,10 +29,34 @@
       ""
     ],
     "createdBy": "680d2292eea6aa87fbb8d8d5",
-    "reviews": [],
+    "reviews": [
+      {
+        "user": "680c7a75142b1082bdd9db17",
+        "rating": 1,
+        "comment": "hello sir",
+        "_id": "6810a9a7299694d378378a0b"
+      },
+      {
+        "user": "680c7a75142b1082bdd9db17",
+        "rating": 3,
+        "comment": "",
+        "_id": "6810b513299694d378378a30"
+      },
+      {
+        "user": "680c7a75142b1082bdd9db17",
+        "rating": 5,
+        "comment": "nice",
+        "_id": "68126223ae639db110eb941d"
+      },
+      {
+        "rating": 5,
+        "comment": "very niceee",
+        "_id": "68126559172d2f09e89600f0"
+      }
+    ],
     "createdAt": "2025-04-26T18:15:23.517Z",
-    "updatedAt": "2025-04-26T18:15:23.517Z",
-    "__v": 0
+    "updatedAt": "2025-05-01T08:38:29.429Z",
+    "__v": 4
   },
   {
     "_id": "680e22acd9730411390359a1",
@@ -40,7 +64,7 @@
     "address": "5th ave road",
     "contact": "1254896",
     "location": "Banglore",
-    "averageRating": 0,
+    "averageRating": 3,
     "offers": true,
     "cuisines": [
       "North Indian"
@@ -64,9 +88,187 @@
       ""
     ],
     "createdBy": "680d2292eea6aa87fbb8d8d5",
-    "reviews": [],
+    "reviews": [
+      {
+        "rating": 3,
+        "comment": "hello",
+        "_id": "68126763d1bc0f613abdc000"
+      }
+    ],
     "createdAt": "2025-04-27T12:27:24.732Z",
-    "updatedAt": "2025-04-27T12:27:24.732Z",
+    "updatedAt": "2025-04-30T18:09:39.677Z",
+    "__v": 1
+  },
+  {
+    "_id": "680f2a7ceca58ef5536f32d7",
+    "name": "Palmshore Restaurant Ramapuram",
+    "address": "Plot 8, Park Dugar, Mount Poonamallee High Road, Ramapuram, Chennai, Tamil Nadu 600089 ",
+    "contact": "044 4270 2244",
+    "location": "Chennai",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian",
+      "South Indian"
+    ],
+    "image": "/uploads/1745824380981-1744795064120-1744713576768-zam zam.jpg",
+    "latitude": 13.116063,
+    "longitude": 79.994955,
+    "nutrients": [
+      "Low Calorie",
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Rainy"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Bike Parking",
+      "Metro",
+      "Bus"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-04-28T07:13:00.998Z",
+    "updatedAt": "2025-04-28T07:13:00.998Z",
+    "__v": 0
+  },
+  {
+    "_id": "680f3015eca58ef5536f3349",
+    "name": "yummy biriyani",
+    "address": "No:108, No.108, Arcot Rd, Trustpuram, Kodambakkam, Chennai, Tamil Nadu 600024",
+    "contact": "09940119703",
+    "location": "Chennai",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "Barbecue",
+      "South Indian"
+    ],
+    "image": "/uploads/1745825813963-2023-11-05.jpg",
+    "latitude": 13.053683341382188,
+    "longitude": 80.22390947695062,
+    "nutrients": [
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Rainy"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Bus",
+      "Bike Parking"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-04-28T07:36:53.965Z",
+    "updatedAt": "2025-04-28T07:36:53.965Z",
+    "__v": 0
+  },
+  {
+    "_id": "680fa00232de71f6ba75b2ea",
+    "name": "Suvai briyani",
+    "address": "NO 75, U BLOCK, 5th Main Rd, near ANNA, I Block, Tower Park, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "contact": " 044 2628 7373",
+    "location": "Chennai",
+    "averageRating": 4.5,
+    "offers": true,
+    "cuisines": [
+      "South Indian"
+    ],
+    "image": "/uploads/1745854466653-star briyanin.jpeg",
+    "latitude": 13.135018525947753,
+    "longitude": 80.11051391833054,
+    "nutrients": [
+      "Low Calorie",
+      "Gluten Free"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Hot",
+      "Rainy",
+      "Cold"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Metro"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [
+      {
+        "user": "680c7a75142b1082bdd9db17",
+        "rating": 5,
+        "comment": "good",
+        "_id": "681326bf031effcc47793337"
+      },
+      {
+        "user": "680d2292eea6aa87fbb8d8d5",
+        "rating": 4,
+        "comment": "helo i am cini",
+        "_id": "681326d999a5a2a1a639f538"
+      }
+    ],
+    "createdAt": "2025-04-28T15:34:26.656Z",
+    "updatedAt": "2025-05-01T07:46:33.750Z",
+    "__v": 2
+  },
+  {
+    "_id": "6814725410db0ce262244552",
+    "name": "Aalaya Veg Restaurant",
+    "address": "No. 19/6, ground floor, Minerva Mills Compound, Dhoop Factory, Magadi Main Rd, next to Mysore Sugandh, Gopalapura, Rajajinagar, Bengaluru, Karnataka 560023",
+    "contact": "090717 63398",
+    "location": "Banglore",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian",
+      "South Indian"
+    ],
+    "image": "/uploads/1746170452267-karavalli-garden.jpg",
+    "latitude": 13.0835975,
+    "longitude": 80.2171135,
+    "nutrients": [
+      "Low Calorie",
+      "High Protein",
+      "Vegan"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Cold",
+      "Hot",
+      "Rainy"
+    ],
+    "timing": [
+      "Breakfast",
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Metro"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-02T07:20:52.272Z",
+    "updatedAt": "2025-05-02T07:20:52.272Z",
     "__v": 0
   }
 ]
