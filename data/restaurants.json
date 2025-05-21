@@ -1,105 +1,5 @@
 [
   {
-    "_id": "680d22bbeea6aa87fbb8d8dc",
-    "name": "dhoni",
-    "address": "cbndfhdfdhdrh",
-    "contact": "45446486876",
-    "location": "Chennai",
-    "averageRating": 3.5,
-    "offers": false,
-    "cuisines": [
-      ""
-    ],
-    "image": "/uploads/1745691323469-ChatGPT Image Apr 16, 2025, 10_04_46 AM.png",
-    "latitude": 13.0318336,
-    "longitude": 80.2127872,
-    "nutrients": [
-      ""
-    ],
-    "dining": [
-      ""
-    ],
-    "weatherPreference": [
-      ""
-    ],
-    "timing": [
-      ""
-    ],
-    "transport": [
-      ""
-    ],
-    "createdBy": "680d2292eea6aa87fbb8d8d5",
-    "reviews": [
-      {
-        "user": "680c7a75142b1082bdd9db17",
-        "rating": 1,
-        "comment": "hello sir",
-        "_id": "6810a9a7299694d378378a0b"
-      },
-      {
-        "user": "680c7a75142b1082bdd9db17",
-        "rating": 3,
-        "comment": "",
-        "_id": "6810b513299694d378378a30"
-      },
-      {
-        "user": "680c7a75142b1082bdd9db17",
-        "rating": 5,
-        "comment": "nice",
-        "_id": "68126223ae639db110eb941d"
-      },
-      {
-        "rating": 5,
-        "comment": "very niceee",
-        "_id": "68126559172d2f09e89600f0"
-      }
-    ],
-    "createdAt": "2025-04-26T18:15:23.517Z",
-    "updatedAt": "2025-05-01T08:38:29.429Z",
-    "__v": 4
-  },
-  {
-    "_id": "680e22acd9730411390359a1",
-    "name": "zam zam",
-    "address": "5th ave road",
-    "contact": "1254896",
-    "location": "Banglore",
-    "averageRating": 3,
-    "offers": true,
-    "cuisines": [
-      "North Indian"
-    ],
-    "image": "/uploads/1745756844676-zam zam.jpg",
-    "latitude": 13.0318336,
-    "longitude": 80.232448,
-    "nutrients": [
-      "High Protein"
-    ],
-    "dining": [
-      ""
-    ],
-    "weatherPreference": [
-      ""
-    ],
-    "timing": [
-      "Dinner"
-    ],
-    "transport": [
-      ""
-    ],
-    "createdBy": "680d2292eea6aa87fbb8d8d5",
-    "reviews": [
-      {
-        "rating": 3,
-        "comment": "hello",
-        "_id": "68126763d1bc0f613abdc000"
-      }
-    ],
-    "createdAt": "2025-04-27T12:27:24.732Z",
-    "updatedAt": "2025-04-30T18:09:39.677Z",
-    "__v": 1
-  },
-  {
     "_id": "680f2a7ceca58ef5536f32d7",
     "name": "Palmshore Restaurant Ramapuram",
     "address": "Plot 8, Park Dugar, Mount Poonamallee High Road, Ramapuram, Chennai, Tamil Nadu 600089 ",
@@ -235,7 +135,7 @@
     "address": "No. 19/6, ground floor, Minerva Mills Compound, Dhoop Factory, Magadi Main Rd, next to Mysore Sugandh, Gopalapura, Rajajinagar, Bengaluru, Karnataka 560023",
     "contact": "090717 63398",
     "location": "Banglore",
-    "averageRating": 0,
+    "averageRating": 3,
     "offers": true,
     "cuisines": [
       "North Indian",
@@ -266,9 +166,472 @@
       "Metro"
     ],
     "createdBy": "680f24648c2a537788751053",
-    "reviews": [],
+    "reviews": [
+      {
+        "user": "680f24648c2a537788751053",
+        "rating": 5,
+        "comment": "excellent !!",
+        "_id": "68148a6a119dc704417569fc"
+      },
+      {
+        "user": "68148ac4e01a4b0d563c85e6",
+        "rating": 1,
+        "comment": "It is not excellent but it is ok to eat",
+        "_id": "68148b93c33ae8c1aef2a54e"
+      }
+    ],
     "createdAt": "2025-05-02T07:20:52.272Z",
-    "updatedAt": "2025-05-02T07:20:52.272Z",
+    "updatedAt": "2025-05-02T09:08:35.789Z",
+    "__v": 2
+  },
+  {
+    "_id": "6814749d10db0ce26224456e",
+    "name": "Spill It Up!!",
+    "address": "2 Nd Floor, BBMP Office, Whitefiled Main Road, Devasandra Industrial Estate, Whitefield, Bengaluru, Karnataka 560048",
+    "contact": " 098361 98361",
+    "location": "Banglore",
+    "averageRating": 5,
+    "offers": true,
+    "cuisines": [
+      "Desserts",
+      "Pastas",
+      "Pizzas"
+    ],
+    "image": "/uploads/1746171037572-H1_Swwing.jpg",
+    "latitude": 12.974835826375195,
+    "longitude": 77.59351891027654,
+    "nutrients": [
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Hot",
+      "Rainy"
+    ],
+    "timing": [
+      "Snacks",
+      "Brunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Railway"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [
+      {
+        "user": "68148ac4e01a4b0d563c85e6",
+        "rating": 5,
+        "comment": "Fantabulous!!",
+        "_id": "68148b26e01a4b0d563c8602"
+      }
+    ],
+    "createdAt": "2025-05-02T07:30:37.580Z",
+    "updatedAt": "2025-05-02T09:06:46.791Z",
+    "__v": 1
+  },
+  {
+    "_id": "68148976045fb7dcc0f92271",
+    "name": "Messy House",
+    "address": "Plot No 738, Rd Number 37, CBI Colony, Jubilee Hills, Hyderabad, Telangana 500033",
+    "contact": "099858 00031",
+    "location": "Hyderabad",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "Desserts"
+    ],
+    "image": "/uploads/1746176374918-photo.jpg",
+    "latitude": 17.43469736975234,
+    "longitude": 78.39544222287611,
+    "nutrients": [
+      "Low Calorie"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Summerlike",
+      "Hot"
+    ],
+    "timing": [
+      "Snacks",
+      "Brunch"
+    ],
+    "transport": [
+      ""
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-02T08:59:34.927Z",
+    "updatedAt": "2025-05-02T08:59:34.927Z",
     "__v": 0
+  },
+  {
+    "_id": "6814f2b0a15257c9cc6b4c06",
+    "name": "Sparkle Biryani",
+    "address": "3-5, 815/A, Old MLA Quarters Rd, Avanti Nagar, Himayat Nagar, Hyderabad, Telangana 500029",
+    "contact": "040 2323 7605",
+    "location": "Hyderabad",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian"
+    ],
+    "image": "/uploads/1746203312721-Biryani.webp",
+    "latitude": 17.400756327352635,
+    "longitude": 78.46725094447834,
+    "nutrients": [
+      "Low Calorie",
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Cold",
+      "Summerlike"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Metro"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-02T16:28:32.746Z",
+    "updatedAt": "2025-05-02T16:28:32.746Z",
+    "__v": 0
+  },
+  {
+    "_id": "6814f5882a7b265352ddc2e6",
+    "name": "Unavu Spot",
+    "address": "7th floor, Krishna Curve Building, Juhu Tara Rd, opp. Juhu Garden, Hasmukh Nagar, Santacruz (West), Mumbai, Maharashtra 400054",
+    "contact": "091527 00123",
+    "location": "Mumbai",
+    "averageRating": 4,
+    "offers": true,
+    "cuisines": [
+      "North Indian",
+      "South Indian"
+    ],
+    "image": "/uploads/1746204040561-hcmp17576_848617.jpeg",
+    "latitude": 19.073698199232336,
+    "longitude": 72.87545818958348,
+    "nutrients": [
+      "Low Calorie",
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Summerlike",
+      "Cold"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner",
+      "Breakfast"
+    ],
+    "transport": [
+      "Bike Parking"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [
+      {
+        "user": "680f24648c2a537788751053",
+        "rating": 4,
+        "comment": "samma meals and worth to order in this restaurant",
+        "_id": "6814f5b5a36d785ffaf766a4"
+      }
+    ],
+    "createdAt": "2025-05-02T16:40:40.582Z",
+    "updatedAt": "2025-05-02T16:41:25.395Z",
+    "__v": 1
+  },
+  {
+    "_id": "681628477207fb1861de1f99",
+    "name": "Suvai Thotam",
+    "address": "33, 3rd Ave, W Block, Anna Nagar, Chennai, Tamil Nadu 600040",
+    "contact": "044 4770 7619",
+    "location": "Chennai",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "South Indian"
+    ],
+    "image": "/uploads/1746282567809-e7b3d814d6303203175f73a53d0509e4.jpg",
+    "latitude": 13.094300249910653,
+    "longitude": 80.20676907519764,
+    "nutrients": [
+      "Vegan",
+      "High Protein",
+      "Low Calorie"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Hot"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner",
+      "Breakfast"
+    ],
+    "transport": [
+      "Metro"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-03T14:29:27.818Z",
+    "updatedAt": "2025-05-03T14:29:27.818Z",
+    "__v": 0
+  },
+  {
+    "_id": "681629cbc70d834e52f8269e",
+    "name": "Malai Malar",
+    "address": "Kukatpally Housing Board Colony, Kukatpally, Hyderabad, Telangana 500072",
+    "contact": " 044 4217 1320",
+    "location": "Hyderabad",
+    "averageRating": 0,
+    "offers": false,
+    "cuisines": [
+      "North Indian",
+      "South Indian"
+    ],
+    "image": "/uploads/1746282955965-Featured-image-vegetarian-restaurant.jpg",
+    "latitude": 17.474632572200058,
+    "longitude": 78.37893138297495,
+    "nutrients": [
+      "Low Calorie",
+      "Vegan"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Hot",
+      "Summerlike",
+      "Winterlike"
+    ],
+    "timing": [
+      "Breakfast",
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Cab"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-03T14:35:55.981Z",
+    "updatedAt": "2025-05-03T14:35:55.981Z",
+    "__v": 0
+  },
+  {
+    "_id": "6818f7d35e8d2967fd3205c4",
+    "name": "Crazy Biryani",
+    "address": "24, JW Marriott Bengaluru, 1, Vittal Mallya Rd, Ashok Nagar, Bengaluru, Karnataka 560001",
+    "contact": "088846 75454",
+    "location": "Banglore",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian",
+      "Barbecue",
+      "Seafood"
+    ],
+    "image": "/uploads/1746466771169-8d1ecd76f142716b2d8fb2c776e804ef.webp",
+    "latitude": 12.968785606338082,
+    "longitude": 77.59629189167035,
+    "nutrients": [
+      "Low Calorie"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Hot",
+      "Rainy"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Railway"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-05T17:39:31.189Z",
+    "updatedAt": "2025-05-06T17:11:48.965Z",
+    "__v": 0
+  },
+  {
+    "_id": "681a3e4648398888853e6d46",
+    "name": "New Place Unique Taste",
+    "address": " Shop No. 67, Municipal Market, Connaught Cir, Connaught Lane, Connaught Place, New Delhi, Delhi 110001",
+    "contact": "011 2341 1580",
+    "location": "Delhi",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian",
+      "Seafood"
+    ],
+    "image": "/uploads/1746550342881-madurai-india-nov-4-2020-260nw-1852796557.webp",
+    "latitude": 28.61238300975202,
+    "longitude": 77.21258111355145,
+    "nutrients": [
+      "High Protein"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Cold",
+      "Summerlike"
+    ],
+    "timing": [
+      "Lunch",
+      "Dinner"
+    ],
+    "transport": [
+      "Bus"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [],
+    "createdAt": "2025-05-06T16:52:22.903Z",
+    "updatedAt": "2025-05-06T16:52:22.903Z",
+    "__v": 0
+  },
+  {
+    "_id": "681a41ea3bb66f3cb51910b4",
+    "name": "The Sizzle Room",
+    "address": "Shop No 2, Riverdale Tower, Ashok Nagar Society, Ashok Nagar, Andheri East, Mumbai, Maharashtra 400072",
+    "contact": "098200 01759",
+    "location": "Mumbai",
+    "averageRating": 5,
+    "offers": true,
+    "cuisines": [
+      "Barbecue"
+    ],
+    "image": "/uploads/1746551274535-barbeque-nation-restaurants-11966322-h1bma8kead-250.webp",
+    "latitude": 19.09853989561763,
+    "longitude": 19.09853989561763,
+    "nutrients": [
+      "Low Calorie"
+    ],
+    "dining": [
+      ""
+    ],
+    "weatherPreference": [
+      "Cold",
+      "Rainy",
+      "Hot"
+    ],
+    "timing": [
+      "Dinner",
+      "Lunch",
+      "Brunch",
+      "Snacks"
+    ],
+    "transport": [
+      "Railway"
+    ],
+    "createdBy": "680f24648c2a537788751053",
+    "reviews": [
+      {
+        "user": "680f24648c2a537788751053",
+        "rating": 5,
+        "comment": "worthy to eat",
+        "_id": "681a42253eec76e48a3a2a8f"
+      }
+    ],
+    "createdAt": "2025-05-06T17:07:54.552Z",
+    "updatedAt": "2025-05-06T17:08:53.419Z",
+    "__v": 1
+  },
+  {
+    "_id": "682708b3ba0a541ae4282bae",
+    "name": "zam zam ",
+    "address": "erfergvrvr",
+    "contact": "1234567889",
+    "location": "Chennai",
+    "averageRating": 0,
+    "offers": true,
+    "cuisines": [
+      "North Indian"
+    ],
+    "image": "/uploads/1747388595104-Queue.png",
+    "latitude": 13.0318336,
+    "longitude": 80.219389889,
+    "nutrients": [
+      "Low Calorie"
+    ],
+    "dining": [
+      "Couple"
+    ],
+    "weatherPreference": [
+      "Cold"
+    ],
+    "timing": [
+      "Breakfast"
+    ],
+    "transport": [
+      "Bus"
+    ],
+    "createdBy": "680d2292eea6aa87fbb8d8d5",
+    "reviews": [],
+    "createdAt": "2025-05-16T09:43:15.163Z",
+    "updatedAt": "2025-05-16T09:43:15.163Z",
+    "__v": 0
+  },
+  {
+    "_id": "6827094e2f90445fda8b6e12",
+    "name": "dffdsgfs",
+    "address": "dsfsdsd",
+    "contact": "1234567889",
+    "location": "Hyderabad",
+    "averageRating": 4,
+    "offers": true,
+    "cuisines": [
+      "North Indian"
+    ],
+    "image": "/uploads/1747388750732-images.png",
+    "latitude": 13.071153232,
+    "longitude": 80.2127872,
+    "nutrients": [
+      "Low Calorie"
+    ],
+    "dining": [
+      "Solo"
+    ],
+    "weatherPreference": [
+      "Cold"
+    ],
+    "timing": [
+      "Breakfast"
+    ],
+    "transport": [
+      "Bus"
+    ],
+    "createdBy": "680d2292eea6aa87fbb8d8d5",
+    "reviews": [
+      {
+        "user": "680d2292eea6aa87fbb8d8d5",
+        "rating": 4,
+        "comment": "nice one",
+        "_id": "682709ec3ce57695b0e3b5ce"
+      }
+    ],
+    "createdAt": "2025-05-16T09:45:50.801Z",
+    "updatedAt": "2025-05-16T09:48:51.842Z",
+    "__v": 1
   }
 ]

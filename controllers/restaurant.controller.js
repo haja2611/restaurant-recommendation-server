@@ -17,17 +17,34 @@ const getAllRestaurants = async (req, res) => {
 const getRestaurantsByFilters = async (req, res) => {
   console.log("request body is", req.body);
   try {
-    const { location, rating, cuisines } = req.body;
+    const {
+      location,
+      rating,
+      cuisines,
+      ambiences,
+      nutrients,
+      dining,
+      weatherPreference,
+      transport,
+      timing,
+    } = req.body;
+
     const query = {};
+
     if (location) {
       query.location = location;
     }
 
-    if (rating?.length > 0) {
-      if (rating == 3) {
-        query.rating = { $gte: 3, $lte: 5 };
-      } else {
-        query.rating = { $gte: 4, $lte: 5 };
+    if (rating) {
+      const numRating = Number(rating);
+      if (numRating === 5) {
+        query.averageRating = 5;
+      } else if (numRating === 4) {
+        query.averageRating = { $gte: 4, $lt: 5 };
+      } else if (numRating === 3) {
+        query.averageRating = { $gte: 3, $lt: 5 };
+      } else if (numRating === 2 || numRating === 1) {
+        query.averageRating = { $gte: 1, $lt: 5 };
       }
     }
 
@@ -35,10 +52,35 @@ const getRestaurantsByFilters = async (req, res) => {
       query.cuisines = { $in: cuisines };
     }
 
+    if (ambiences?.length > 0) {
+      query.ambiences = { $in: ambiences };
+    }
+
+    if (nutrients?.length > 0) {
+      query.nutrients = { $in: nutrients };
+    }
+
+    if (dining?.length > 0) {
+      query.dining = { $in: dining };
+    }
+
+    if (weatherPreference?.length > 0) {
+      query.weatherPreference = { $in: weatherPreference };
+    }
+
+    if (transport?.length > 0) {
+      query.transport = { $in: transport };
+    }
+
+    if (timing?.length > 0) {
+      query.timing = { $in: timing };
+    }
+
     const restaurants = await RestaurantModel.find(query).populate(
       "reviews.user",
       "name avatar"
     );
+
     if (restaurants.length > 0) {
       res.json({ success: true, data: restaurants });
     } else {

@@ -23,7 +23,7 @@ const restaurantSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-
+    ambiences: [String],
     nutrients: [String], // e.g., ["low calorie", "nutfree"]
     dining: [String], // e.g., ["indoor", "outdoor"]
     weatherPreference: [String], // e.g., ["cold", "summerlike"]
